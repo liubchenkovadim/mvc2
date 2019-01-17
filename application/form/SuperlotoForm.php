@@ -18,7 +18,7 @@ class SuperlotoForm extends Form
         $form[] = $this->createForm();
         $form[] = $this->p('Введите количество нужных комбинации! ');
         $form[] = $this->createInput(['type' => 'number',
-            'name' => 'number', 'min' => 1, 'max' => 10]);
+            'name' => 'number', 'min' => 1, 'max' => 100000, 'value' => 1]);
         $form[] = $this->p('');
         $form[] = $this->createInput(['type'=> 'submit','value' => 'Генерировать',
             'name' => 'go']);

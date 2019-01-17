@@ -23,12 +23,19 @@ echo $errors;
     <div class="col-4">
         <table class="table">
 
-            <?php foreach ($result as $arr){
-                echo '<tr>';
-                for ($i =0; $i < count($arr); $i++ ){
-                    echo '<td>'.$arr[$i].'</td>';
+            <?php
+            if($result != null) {
+                foreach ($result as $arr) {
+                    echo '<tr>';
+                    for ($i = 0; $i < count($arr); $i++) {
+                        echo '<td>' . $arr[$i] . '</td>';
+                    }
+                    echo '</tr>';
                 }
-                echo '</tr>';
+            } else {
+                echo '<p>Совпадений из <span style="color: red"> '.$_POST['number'].
+                ' </span> комбинаций не найдено. 
+                Попробуйте больше комбинаций с генерировать!</p>';
             }?>
 
         </table>

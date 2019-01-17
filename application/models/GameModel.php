@@ -19,7 +19,7 @@ class GameModel extends Model
            $arr[] = $this->creatComb();
 
         }
-        return $arr;
+        return $this->searshComb($arr);
     }
 
     private function random()
@@ -52,6 +52,27 @@ class GameModel extends Model
         $arr = $this->check($arr);
 
         return $arr;
+
+    }
+
+    private function searshComb($arr)
+    {
+        set_time_limit(1000);
+        $result = [];
+        foreach ($arr as $key => $item) {
+            $i = 0;
+            foreach ($arr as $keys => $val) {
+                if($key != $keys){
+                    if($item == $val){
+                        $i++;
+
+                    }
+                }
+            }
+            if($i > 0){
+                $result = $item;
+            }
+        }
 
     }
 }
